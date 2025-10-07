@@ -42,16 +42,15 @@ s.n. dasgupta
 ### Display the content of the files
 cat < file1
 ## OUTPUT
-<img width="217" height="117" alt="image" src="https://github.com/user-attachments/assets/0960c26c-7b8a-4d68-80c8-7ec7fc45f57d" />
 
+![Alt text](img/1.png)
 
 
 
 cat < file2
 ## OUTPUT
-<img width="197" height="131" alt="image" src="https://github.com/user-attachments/assets/3ddede20-731f-4bc3-b575-7f43e6a97823" />
 
-
+![Alt text](img/2.png)
 
 # Comparing Files
 cmp file1 file2
@@ -495,7 +494,7 @@ gunzip backup.tar.gz
 # Shell Script
 ```
 echo '#!/bin/sh' > my-script.sh
-echo 'echo Hello World‘; exit 0 >> my-script.sh
+echo 'echo Hello World; exit 0' >> my-script.sh
 ```
 chmod 755 my-script.sh
 ./my-script.sh
