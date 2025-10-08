@@ -55,19 +55,16 @@ cat < file2
 # Comparing Files
 cmp file1 file2
 ## OUTPUT
-<img width="358" height="63" alt="image" src="https://github.com/user-attachments/assets/c446547e-36ac-4d13-afd3-cea457f66d95" />
-
+![Alt text](img/3.png)
  
 comm file1 file2
  ## OUTPUT
- <img width="390" height="246" alt="image" src="https://github.com/user-attachments/assets/e07cd9a3-6981-42a2-bbb8-4b8e9f725998" />
-
+![Alt text](img/4.png)
 
  
 diff file1 file2
 ## OUTPUT
-<img width="292" height="227" alt="image" src="https://github.com/user-attachments/assets/089f184f-01dd-4586-913b-6fdd3fbe5055" />
-
+![Alt text](img/5.png)
 
 
 #Filters
@@ -91,46 +88,41 @@ cat > file22
 
 cut -c1-3 file11
 ## OUTPUT
-<img width="257" height="97" alt="image" src="https://github.com/user-attachments/assets/4b277d96-68f6-48d1-8ca5-2400036b9543" />
-
+![Alt text](img/6.png)
 
 
 
 
 cut -d "|" -f 1 file22
 ## OUTPUT
-<img width="287" height="91" alt="image" src="https://github.com/user-attachments/assets/6333ff49-5292-47a6-b434-8000aa78c426" />
-
+![Alt text](img/7.png)
 
 
 
 cut -d "|" -f 2 file22
 ## OUTPUT
-<img width="271" height="146" alt="image" src="https://github.com/user-attachments/assets/38f436fc-4de8-4b22-ba07-219b52a07048" />
+![Alt text](img/8.png)
 
 
-
-cat < newfile 
+cat > newfile 
 ```
 Hello world
 hello world
 ^d
 ````
-cat > newfile 
+cat <> newfile 
 Hello world
 hello world
  
 grep Hello newfile 
 ## OUTPUT
-<img width="397" height="72" alt="image" src="https://github.com/user-attachments/assets/61d7b11a-f73a-411a-ae46-fb638e02b907" />
-
+![Alt text](img/9.png)
 
 
 
 grep hello newfile 
 ## OUTPUT
-<img width="301" height="66" alt="image" src="https://github.com/user-attachments/assets/183c9c73-2b8a-48e8-b02f-51da3bc7e754" />
-
+![Alt text](img/10.png)
 
 
 
@@ -142,7 +134,6 @@ grep -v hello newfile
 
 cat newfile | grep -i "hello"
 ## OUTPUT
-<img width="395" height="86" alt="image" src="https://github.com/user-attachments/assets/eee946a7-4d9f-43d9-8160-5108ac7babf8" />
 
 
 
@@ -169,7 +160,7 @@ grep -w -n world newfile
 
 
 
-cat < newfile 
+cat > newfile 
 ```
 Hello world
 hello world
@@ -179,7 +170,7 @@ Linux is best in this World
 ^d
 ```
 
-cat > newfile
+cat < newfile
 ```
 Hello world
 hello world
@@ -427,14 +418,14 @@ cat file23 | tr [:lower:] [:upper:]
  <img width="423" height="237" alt="image" src="https://github.com/user-attachments/assets/a7c23b5e-915c-400b-8c70-31e8b152a52d" />
 
 
-cat < urllist.txt
+cat > urllist.txt
 ```
 www. yahoo. com
 www. google. com
 www. mrcet.... com
 ^d
  ```
-cat > urllist.txt
+cat <> urllist.txt
 ```
 www. yahoo. com
 www. google. com
@@ -489,7 +480,7 @@ gunzip backup.tar.gz
 ## OUTPUT
 <img width="181" height="105" alt="image" src="https://github.com/user-attachments/assets/695f084a-d620-41da-89ac-fbb04de6f47c" />
 
-
+cd ..
  
 # Shell Script
 ```
@@ -516,7 +507,7 @@ cat herecheck.txt
 
 
 
-cat < scriptest.sh 
+cat > scriptest.sh 
 ```bash
 \#!/bin/sh
 echo “File name is $0 ”
@@ -580,7 +571,7 @@ echo $?
  
 # mis-using string comparisons
 
-cat < strcomp.sh 
+cat > strcomp.sh 
 ```bash
 \#!/bin/bash
 val1=baseball
@@ -619,7 +610,7 @@ chmod 755 strcomp.sh
 
 
 # check file ownership
-cat < psswdperm.sh 
+cat > psswdperm.sh 
 ```bash
 \#!/bin/bash
 if [ -O /etc/passwd ]
@@ -641,6 +632,8 @@ else
 echo “Sorry, you are not the owner of the /etc/passwd file”
 fi
  ```
+
+ chmod 755 psswdperm.sh
 ./psswdperm.sh
 ## OUTPUT
 
@@ -687,6 +680,8 @@ echo “Sorry, the object does not exist”
 fi
 ```
 
+chmod 755 ifnested.sh
+
 ./ifnested.sh 
 ## OUTPUT
 <img width="671" height="182" alt="image" src="https://github.com/user-attachments/assets/e1abfb77-bb91-4330-95f1-9a1c379a2802" />
@@ -731,12 +726,16 @@ echo “The values are different”
 fi
 ```
 
-$ chmod 755 iftest.sh
-<img width="602" height="147" alt="image" src="https://github.com/user-attachments/assets/23c4f747-07ec-4b2d-bda1-aa7a686f964f" />
+chmod 755 iftest.sh
 
  
-$ ./iftest.sh 
+ ./iftest.sh 
+
+ 
 ##OUTPUT
+
+<img width="602" height="147" alt="image" src="https://github.com/user-attachments/assets/23c4f747-07ec-4b2d-bda1-aa7a686f964f" />
+
 
 # check if a file
 cat > ifnested.sh 
@@ -761,7 +760,7 @@ fi
 ^d
 ```
 
-cat ifnested.sh 
+cat > ifnested.sh 
 ```bash
 \#!/bin/bash
 if [ -e $HOME ]
@@ -782,15 +781,17 @@ echo “Sorry, the object does not exist”
 fi
 ```
 
-$ chmod 755 ifnested.sh
-<img width="570" height="162" alt="image" src="https://github.com/user-attachments/assets/b23634d5-e14e-42a6-bc3b-b44c8e5676a9" />
+ chmod 755 ifnested.sh
 
  
-$ ./ifnested.sh 
+ ./ifnested.sh 
 ##OUTPUT
 
+<img width="570" height="162" alt="image" src="https://github.com/user-attachments/assets/b23634d5-e14e-42a6-bc3b-b44c8e5676a9" />
+
+
 # looking for a possible value using elif
-cat elifcheck.sh 
+cat > elifcheck.sh 
 ```bash
 \#!/bin/bash
 if [ $USER = Ram ]
@@ -812,9 +813,9 @@ echo "Sorry, you are not allowed here"
 fi
 ```
 
-$ chmod 755 elifcheck.sh
+chmod 755 elifcheck.sh
  
-$ ./elifcheck.sh 
+ ./elifcheck.sh 
 ## OUTPUT
 <img width="667" height="138" alt="image" src="https://github.com/user-attachments/assets/b2a91ee7-afe7-49d1-8957-4ab162f91bcd" />
 
@@ -831,8 +832,10 @@ else
 echo "I cannot write to the file"
 fi
 ```
-$ chmod 755 ifcompound.sh
-$ ./ifcompound.sh 
+
+chmod 755 ifcompound.sh
+
+ ./ifcompound.sh 
 ## OUTPUT
 <img width="597" height="140" alt="image" src="https://github.com/user-attachments/assets/90d451ed-f2cd-4ee6-b835-003a9f043d11" />
 
@@ -852,13 +855,13 @@ echo "$USER, Do not forget to log off when you're done";;
 echo "Sorry, you are not allowed here";;
 esac
 ```
-$ chmod 755 casecheck.sh 
+ chmod 755 casecheck.sh 
 <img width="431" height="101" alt="image" src="https://github.com/user-attachments/assets/10e3500e-ae71-43ec-98c9-0707f0142633" />
 
  
-$ ./casecheck.sh 
+ ./casecheck.sh 
  
-cat > whiletest
+cat > whiletest.sh
 ```bash
 #!/bin/bash
 #while command test
@@ -869,9 +872,9 @@ echo $var1
 var1=$[ $var1 - 1 ]
 done
 ```
-$ chmod 755 whiletest.sh
+ chmod 755 whiletest.sh
  
-$ ./whiletest.sh
+ ./whiletest.sh
 <img width="337" height="300" alt="image" src="https://github.com/user-attachments/assets/bce3d36a-9de6-43dd-abd7-fdba3409feb5" />
 
  
@@ -886,7 +889,9 @@ echo $var1
 var1=$[ $var1 - 25 ]
 done
 ``` 
-$ chmod 755 untiltest.sh
+chmod 755 untiltest.sh
+
+./untiltest.sh
 <img width="351" height="163" alt="image" src="https://github.com/user-attachments/assets/cbde6664-d464-478e-9c65-c18f0cc3d9c6" />
 
  
@@ -902,10 +907,10 @@ echo The next state is $test
 done
  ```
  
-$ chmod 755 forin1.sh
+ chmod 755 forin1.sh
 <img width="293" height="202" alt="image" src="https://github.com/user-attachments/assets/8c01b599-ee33-4eaa-9b48-039092ec330c" />
 
- 
+./forin1.sh 
  
 cat forin2.sh 
 ```bash
@@ -917,8 +922,6 @@ echo “word:$test”
 done
  ```
  
-$ chmod 755 forin2.sh
-<img width="402" height="147" alt="image" src="https://github.com/user-attachments/assets/f3828653-55bb-4c65-883b-8cda06d2508f" />
 
  
 cat forin2.sh 
@@ -930,11 +933,11 @@ do
 echo “word:$test”
 done
 ```
-$ chmod 755 forin2.sh
+ chmod 755 forin2.sh
  
-$ ./forin2.sh 
+ ./forin2.sh 
  
-cat forin3.sh 
+cat > forin3.sh 
 ```bash
 \#!/bin/bash
 \# another example of how not to use the for command
@@ -943,12 +946,14 @@ do
 echo "word:$test"
 done
 ```
-$ ./forin3.sh 
+
+chmod 755 forin3.sh
+ ./forin3.sh 
 ## Output
 <img width="371" height="220" alt="image" src="https://github.com/user-attachments/assets/c523032a-6f70-4cd2-8bda-f23a91bf1b11" />
 
  
-cat forin1.sh 
+cat > forin1.sh 
 ```bash
 #!/bin/bash
 # basic for command
@@ -957,10 +962,11 @@ do
 echo The next state is $test
 done
 ```
-$ chmod 755 forin1.sh
+ chmod 755 forin1.sh
 
+./forin1.sh
 ## OUTPUT
-cat forinfile.sh 
+cat > forinfile.sh 
 ```bash
 #!/bin/bash
 # reading values from a file
@@ -970,8 +976,8 @@ do
 echo "Visit beautiful $file“
 done
 ```
-$ chmod 777 forinfile.sh
-$ cat cities
+ chmod 777 forinfile.sh
+ cat > cities
 Hyderabad
 Alampur
 Basara
@@ -980,12 +986,14 @@ Adilabad
 Bhadrachalam
 Khammam
 
+
+cat cities
 ## OUTPUT
 <img width="446" height="370" alt="image" src="https://github.com/user-attachments/assets/00f82773-6fe0-4bba-a674-cfc24a2455e9" />
 
 
 
-cat forctype.sh 
+cat > forctype.sh 
 ```bash
 #!/bin/bash
 # testing the C-style for loop
@@ -1009,13 +1017,13 @@ do
 echo "$a - $b"
 done
 ```
-$ chmod 755 forctype.sh
-$ ./forctype1.sh 
+ chmod 755 forctype.sh
+./forctype1.sh 
 ## OUTPUT
 <img width="337" height="181" alt="image" src="https://github.com/user-attachments/assets/62a893b6-bb52-4a64-bd45-07a4d881a94d" />
 
 
-cat fornested1.sh 
+cat > fornested1.sh 
 ```bash
 #!/bin/bash
 # nesting for loops
@@ -1028,15 +1036,15 @@ echo " Inside loop: $b"
 done
 done
 ```
-$ chmod 755 fornested1.sh
+chmod 755 fornested1.sh
  
-$ ./fornested1.sh 
+ ./fornested1.sh 
  ## OUTPUT
  <img width="377" height="326" alt="image" src="https://github.com/user-attachments/assets/63d163e7-3931-495c-a107-4db6dd53528a" />
 
 
  
-cat forbreak.sh 
+cat > forbreak.sh 
 ```bash
 #!/bin/bash
 # breaking out of a for loop
@@ -1050,15 +1058,19 @@ echo "Iteration number: $var1"
 done
 echo "The for loop is completed“
 ```
+
+
+ chmod 755 forbreak.sh
+ 
+ ./forbreak.sh 
+
+
 ## OUTPUT
 <img width="502" height="172" alt="image" src="https://github.com/user-attachments/assets/8773591b-d8c3-4f40-b0ec-1cb8543071d8" />
 
 
-$ chmod 755 forbreak.sh
  
-$ ./forbreak.sh 
- 
-cat forbreak.sh 
+cat > forbreak.sh 
 ```bash
 #!/bin/bash
 # breaking out of a for loop
@@ -1074,14 +1086,14 @@ echo "The for loop is completed“
 ```
 
  
-$ chmod 755 forcontinue.sh
+ chmod 755 forcontinue.sh
  
-$ ./forcontinue.sh 
+ ./forcontinue.sh 
 ## OUTPUT
 <img width="471" height="200" alt="image" src="https://github.com/user-attachments/assets/7ca6e6cd-9ffe-4d7a-a8d1-3ee1fc2271b5" />
 
  
-cat exread.sh 
+cat > exread.sh 
 ```bash
 #!/bin/bash
 # testing the read command
@@ -1090,32 +1102,33 @@ read name
 echo "Hello $name, welcome to my program. "
  ```
  
-$ chmod 755 exread.sh 
+ chmod 755 exread.sh 
  
-$ ./exread.sh 
+ ./exread.sh 
 ## OUTPUT
 <img width="455" height="137" alt="image" src="https://github.com/user-attachments/assets/3e4b50d2-15b0-4021-93c9-64f65f51b592" />
 
 
 
- cat exread1.sh
+ cat > exread1.sh
 ```bash
 #!/bin/bash
 # testing the read command
 read -p "Enter your name: " name
 echo "Hello $name, welcome to my program. “
 ``` 
-$ chmod 755 exread1.sh 
+ chmod 755 exread1.sh 
 
-## OUTPUT
+
+
+ ./exread1.sh 
+
+ ## OUTPUT
 <img width="275" height="148" alt="image" src="https://github.com/user-attachments/assets/149bf4c4-4d74-4d2c-8175-f92ec033f950" />
 
 
-
-
-$ ./exread1.sh 
  
-cat funcex.sh
+cat > funcex.sh
 ```bash
 #!/bin/bash
 # trying to access script parameters inside a function
@@ -1130,16 +1143,22 @@ else
 echo "Usage: badtest1 a b"
 fi
 ```
+chmod 755 funcex.sh
+
+ ./funcex.sh
+
+
+./funcex.sh 1 2
 ## OUTPUT
- ./funcex.sh 
+ 
  <img width="300" height="156" alt="image" src="https://github.com/user-attachments/assets/9a95c929-8b98-4af9-97bb-1cca28d0499d" />
 
 
  
- ./funcex.sh 1 2
+ 
 
  
-cat argshift.sh
+cat > argshift.sh
 ```bash
 #!/bin/bash 
  while (( "$#" )); do 
@@ -1147,14 +1166,16 @@ cat argshift.sh
   shift 
 done
 ```
-$ chmod 777 argshift.sh
+ chmod 777 argshift.sh
+
+./argshift.sh 1 2 3
 
 ## OUTPUT
 <img width="372" height="186" alt="image" src="https://github.com/user-attachments/assets/d4414d6f-f13e-4355-a603-532c67e12969" />
 
-$ ./argshift.sh 1 2 3
  
- cat argshift1.sh
+ 
+ cat > argshift1.sh
 ```bash
  #/bin/bash 
  # store arguments in a special array 
@@ -1167,13 +1188,16 @@ for (( i=0;i<$ELEMENTS;i++)); do
     echo ${args[${i}]} 
 done
 ```
-$ chmod 777 argshift.sh
+ chmod 777 argshift.sh
+
+./argshift.sh 1 2 3
+
 ## OUTPUT
 <img width="300" height="146" alt="image" src="https://github.com/user-attachments/assets/8afbc132-016c-4769-ba24-1271228cc0bb" />
 
-$ ./argshift.sh 1 2 3
  
-cat argshift.sh
+ 
+cat > argshift.sh
 ```bash
 #!/bin/bash 
 set -x 
@@ -1183,10 +1207,13 @@ while (( "$#" )); do
 done
 set +x
 ```
+
+chmod 755 argshift.sh
+./argshift.sh 1 2 3
 ## OUTPUT
 <img width="382" height="388" alt="image" src="https://github.com/user-attachments/assets/b311b300-fb90-43e9-bd6a-56873049a0e4" />
 
- ./argshift.sh 1 2 3
+ 
  
  
 cat > nc.awk
@@ -1245,6 +1272,10 @@ else
 	echo "Number is NOT palindrome"
 fi
 ```
+
+chmod 777 palindrome.sh
+
+./palindrome.sh
 ## OUTPUT 
 <img width="367" height="148" alt="image" src="https://github.com/user-attachments/assets/d441f209-8c5a-48be-8480-4e6a05fce048" />
 
