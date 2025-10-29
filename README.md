@@ -1110,7 +1110,8 @@ echo "Hello $name, welcome to my program. "
 
 
 
- cat > exread1.sh
+cat > exread1.sh
+
 ```bash
 #!/bin/bash
 # testing the read command
